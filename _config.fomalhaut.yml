@@ -1220,6 +1220,7 @@ inject:
     # / #defineBg / #menu_shadow / #nav-display / #aside-show / #aside-pos 是"运行时空槽"：
     # 由右下角美化面板的 JS 在运行时往里写 CSS，不能删、不能挪位置。
     - <link rel="stylesheet" href="/css/site-inject.css?v=20261015-fps4">
+    - <link rel="stylesheet" href="/css/site-music-player.css?v=20261108">
     # 导航磨砂底色与工具区间距（独立覆盖；保留主题导航显示/折叠逻辑）
     - <link rel="stylesheet" href="/css/navigation.css?v=20261011-nav3">
     # ── 手机端抽屉菜单改版（站点独立样式，不改主题源码）────────────────────────
@@ -1364,6 +1365,8 @@ inject:
     - <script defer src="/js/author-status.js"></script> # 侧栏头像状态胶囊：按时间/节假日自动切换（放假/上班/下班/睡觉）
     - <script defer src="/js/stats.js?v=20261005"></script> # 文章统计页（/tags/）：emoji 标题拆成分节头 + 三张 echarts 跟随主题色/明暗模式
     - <script defer src="/js/footer-music.js?v=20261005"></script> # 页脚「猜你想看」右下空位补一条「听点音乐」→ /life/music/（八音盒）
+    - <div id="site-music-engine" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="508246771" data-server="netease" data-type="playlist" data-mode="random" data-autoplay="false" data-fixed="true" data-listmaxheight="340px" data-preload="auto" data-theme="#e3f2f5" data-volume="0.4" data-api="https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&r=:r" mutex="true"></div> # 全站音乐播放器引擎（在 PJAX 内容区外，切页不中断）
+    - <script defer src="/js/site-music-player.js?v=20261108"></script> # 首页横向播放器 + 全站导航迷你播放器
     - <script defer src="/js/pjax-guard.js?v=20261005"></script> # 修 pjax 选择器不匹配：/tags/ 图表容器 id 导致换页退回整页刷新 + 加载遮罩一直转圈
     - <script defer src="/js/inject/search-lazy.js?v=20261011b"></script> # Algolia 搜索按需加载：空闲预取 + 点开才执行（省 88KB 压缩流量 / 277KB 解析，见 source/js/inject/search-lazy.js）
     - <script src="/js/inject/scroll-gap-fix.js?v=20261011"></script> # 锚点跳转补偿：常驻顶栏留 70px
